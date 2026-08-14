@@ -310,6 +310,18 @@
   }
 
   :focus-visible{ outline: 2px solid var(--cyan); outline-offset:3px; }
+
+  .course-pricing{display:flex; gap:18px; flex-wrap:wrap; align-items:center;}
+  .price-option{display:flex; flex-direction:column; gap:3px;}
+  .price-option .mode{font-family:var(--mono); font-size:0.68rem; color:var(--muted); letter-spacing:1px; text-transform:uppercase;}
+  .price-option .new-price{font-family:var(--mono); font-size:1.05rem; font-weight:600;}
+  .price-option .old-price{font-family:var(--mono); font-size:0.68rem; color:var(--muted); text-decoration:line-through;}
+  .modal-pricing{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:24px;}
+  .modal-price-option{padding:14px 16px; border:1px solid var(--line); border-radius:10px; background:rgba(255,255,255,0.02);}
+  .modal-price-option .mode{font-family:var(--mono); font-size:0.68rem; color:var(--muted); letter-spacing:1px; text-transform:uppercase; display:block; margin-bottom:6px;}
+  .modal-price-option .new{font-family:var(--mono); font-size:1.25rem; font-weight:600;}
+  .modal-price-option .old{font-family:var(--mono); font-size:0.72rem; color:var(--muted); text-decoration:line-through; margin-left:6px;}
+  @media (max-width:520px){ .modal-pricing{grid-template-columns:1fr;} }
 </style>
 </head>
 <body>
@@ -370,7 +382,10 @@
       </div>
       <p class="course-desc-short">Master Microsoft server environments — install, configure, and administer Windows Server infrastructure from the ground up.</p>
       <div class="course-bottom">
-        <div class="course-price">3000 <span>EGP</span></div>
+        <div class="course-pricing">
+          <div class="price-option"><span class="mode">Online</span><span class="new-price">7000 <span>EGP</span></span><span class="old-price">12000 EGP</span></div>
+          <div class="price-option"><span class="mode">Offline</span><span class="new-price">3000 <span>EGP</span></span><span class="old-price">6000 EGP</span></div>
+        </div>
         <div class="course-cta">View details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
       </div>
     </div>
@@ -387,7 +402,10 @@
       </div>
       <p class="course-desc-short">Learn to diagnose hardware and software issues, manage tickets, and keep end-users productive on day one of the job.</p>
       <div class="course-bottom">
-        <div class="course-price">3000 <span>EGP</span></div>
+        <div class="course-pricing">
+          <div class="price-option"><span class="mode">Online</span><span class="new-price">7000 <span>EGP</span></span><span class="old-price">12000 EGP</span></div>
+          <div class="price-option"><span class="mode">Offline</span><span class="new-price">3000 <span>EGP</span></span><span class="old-price">6000 EGP</span></div>
+        </div>
         <div class="course-cta">View details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
       </div>
     </div>
@@ -404,7 +422,10 @@
       </div>
       <p class="course-desc-short">Build real routing and switching skills on Cisco gear — the foundation certification for any networking career.</p>
       <div class="course-bottom">
-        <div class="course-price">3000 <span>EGP</span></div>
+        <div class="course-pricing">
+          <div class="price-option"><span class="mode">Online</span><span class="new-price">7000 <span>EGP</span></span><span class="old-price">12000 EGP</span></div>
+          <div class="price-option"><span class="mode">Offline</span><span class="new-price">3000 <span>EGP</span></span><span class="old-price">6000 EGP</span></div>
+        </div>
         <div class="course-cta">View details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
       </div>
     </div>
@@ -421,7 +442,10 @@
       </div>
       <p class="course-desc-short">Defend real networks — threat detection, hardening, incident response, and the mindset behind every attack.</p>
       <div class="course-bottom">
-        <div class="course-price">5000 <span>EGP</span></div>
+        <div class="course-pricing">
+          <div class="price-option"><span class="mode">Online</span><span class="new-price">10000 <span>EGP</span></span><span class="old-price">15000 EGP</span></div>
+          <div class="price-option"><span class="mode">Offline</span><span class="new-price">5000 <span>EGP</span></span><span class="old-price">7000 EGP</span></div>
+        </div>
         <div class="course-cta">View details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
       </div>
     </div>
@@ -499,7 +523,18 @@
     <div class="modal-close" id="modalClose">&times;</div>
     <div class="modal-eyebrow" id="modalEyebrow">COURSE</div>
     <h3 id="modalTitle">Course Title</h3>
-    <div class="modal-price-row"><span id="modalPrice">0</span><span class="cur">EGP · full course</span></div>
+    <div class="modal-pricing">
+      <div class="modal-price-option">
+        <span class="mode">Online</span>
+        <span class="new" id="modalOnlinePrice">0 EGP</span>
+        <span class="old" id="modalOnlineOld">0 EGP</span>
+      </div>
+      <div class="modal-price-option">
+        <span class="mode">Offline</span>
+        <span class="new" id="modalOfflinePrice">0 EGP</span>
+        <span class="old" id="modalOfflineOld">0 EGP</span>
+      </div>
+    </div>
     <div class="modal-desc" id="modalDesc"></div>
     <ul class="modal-list" id="modalList"></ul>
     <div class="modal-actions">
@@ -514,7 +549,7 @@
     mcsa: {
       code: "MCSA · Microsoft Certified Solutions Associate",
       title: "MCSA — Windows Server Administration",
-      price: "3000",
+      "online":"7000","offline":"3000","onlineOld":"12000","offlineOld":"6000",
       desc: [
         "This course takes you through installing, configuring, and managing Windows Server environments the way they run in real companies — not just in theory.",
         "You'll set up Active Directory, manage users and group policy, configure DNS and DHCP, and handle the storage and networking roles a server admin is expected to own."
@@ -530,7 +565,7 @@
     itsupport: {
       code: "IT Technical Support · Helpdesk & Field",
       title: "IT Technical Support",
-      price: "3000",
+      "online":"7000","offline":"3000","onlineOld":"12000","offlineOld":"6000",
       desc: [
         "Built for anyone who wants to start an IT career at the first line of contact — diagnosing problems, fixing them, and explaining what happened in plain language.",
         "You'll work through real hardware faults, OS issues, printer and peripheral setup, and the ticketing habits that make a support technician reliable."
@@ -546,7 +581,7 @@
     ccna: {
       code: "CCNA · Cisco Certified Network Associate",
       title: "CCNA — Routing & Switching",
-      price: "3000",
+      "online":"7000","offline":"3000","onlineOld":"12000","offlineOld":"6000",
       desc: [
         "The foundation certification for a networking career, taught on real Cisco equipment and packet-tracer labs so the concepts actually stick.",
         "By the end you'll be comfortable configuring routers and switches, reading a network topology, and troubleshooting connectivity like it's your job — because soon it will be."
@@ -562,7 +597,7 @@
     cyber: {
       code: "Cyber Security · Defense & Response",
       title: "Cyber Security",
-      price: "5000",
+      "online":"10000","offline":"5000","onlineOld":"15000","offlineOld":"7000",
       desc: [
         "A practical introduction to defending networks and systems — how attacks actually happen, how to spot them, and how to respond before damage spreads.",
         "You'll get hands-on with security tools, walk through real incident scenarios, and build the analytical mindset that separates a good security analyst from a great one."
@@ -586,7 +621,10 @@
       const data = courseData[key];
       document.getElementById('modalEyebrow').textContent = data.code;
       document.getElementById('modalTitle').textContent = data.title;
-      document.getElementById('modalPrice').textContent = data.price;
+      document.getElementById('modalOnlinePrice').textContent = `${data.online} EGP`;
+      document.getElementById('modalOnlineOld').textContent = `${data.onlineOld} EGP`;
+      document.getElementById('modalOfflinePrice').textContent = `${data.offline} EGP`;
+      document.getElementById('modalOfflineOld').textContent = `${data.offlineOld} EGP`;
       document.getElementById('modalDesc').innerHTML = data.desc.map(p => `<p>${p}</p>`).join('');
       document.getElementById('modalList').innerHTML = data.list.map(li => `<li>${li}</li>`).join('');
       overlay.classList.add('open');
