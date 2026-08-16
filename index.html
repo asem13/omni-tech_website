@@ -213,7 +213,7 @@
   }
   .modal-overlay.open{ opacity:1; pointer-events:auto; }
   .modal{
-    width:100%; max-width:620px; max-height:85vh; overflow-y:auto;
+    width:100%; max-width:720px; max-height:88vh; overflow-y:auto;
     background: var(--bg-soft);
     border: 1px solid var(--line);
     border-radius: 16px;
@@ -322,6 +322,45 @@
   .modal-price-option .new{font-family:var(--mono); font-size:1.25rem; font-weight:600;}
   .modal-price-option .old{font-family:var(--mono); font-size:0.72rem; color:var(--muted); text-decoration:line-through; margin-left:6px;}
   @media (max-width:520px){ .modal-pricing{grid-template-columns:1fr;} }
+
+  /* ===== IT SUPPORT ENHANCED MODAL ===== */
+  .it-highlight{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:0 0 22px;
+  }
+  .it-highlight-card{
+    border:1px solid var(--line); border-radius:10px; padding:13px 14px;
+    background:rgba(51,217,232,0.035);
+  }
+  .it-highlight-card .label{
+    display:block; font-family:var(--mono); font-size:.64rem; letter-spacing:1px;
+    color:var(--muted); text-transform:uppercase; margin-bottom:5px;
+  }
+  .it-highlight-card strong{font-size:.92rem;}
+  .it-section-title{
+    font-family:var(--display); font-size:1.05rem; margin:22px 0 9px;
+  }
+  .it-detail-text{
+    color:var(--muted); line-height:1.7; font-size:.94rem; margin-bottom:10px;
+  }
+  .it-outcomes{
+    display:grid; grid-template-columns:1fr 1fr; gap:8px 18px; margin:10px 0 4px;
+  }
+  .it-outcomes div{
+    color:var(--text); font-size:.9rem; padding:8px 0 8px 22px; position:relative;
+  }
+  .it-outcomes div::before{
+    content:'✓'; position:absolute; left:0; color:var(--green); font-weight:700;
+  }
+  .it-note{
+    margin-top:18px; padding:13px 15px; border:1px solid rgba(110,232,138,.2);
+    border-radius:10px; background:rgba(110,232,138,.035); color:var(--muted);
+    font-size:.86rem; line-height:1.6;
+  }
+  @media(max-width:600px){
+    .it-highlight{grid-template-columns:1fr;}
+    .it-outcomes{grid-template-columns:1fr;}
+  }
+
 </style>
 </head>
 <body>
@@ -383,8 +422,8 @@
       <p class="course-desc-short">Master Microsoft server environments — install, configure, and administer Windows Server infrastructure from the ground up.</p>
       <div class="course-bottom">
         <div class="course-pricing">
-          <div class="price-option"><span class="mode">Online</span><span class="new-price">7000 <span>EGP</span></span><span class="old-price">12000 EGP</span></div>
-          <div class="price-option"><span class="mode">Offline</span><span class="new-price">3000 <span>EGP</span></span><span class="old-price">6000 EGP</span></div>
+          <div class="price-option"><span class="mode">Online</span><span class="new-price">3000 <span>EGP</span></span><span class="old-price">6000 EGP</span></div>
+          <div class="price-option"><span class="mode">Offline</span><span class="new-price">7000 <span>EGP</span></span><span class="old-price">12000 EGP</span></div>
         </div>
         <div class="course-cta">View details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
       </div>
@@ -403,8 +442,8 @@
       <p class="course-desc-short">Learn to diagnose hardware and software issues, manage tickets, and keep end-users productive on day one of the job.</p>
       <div class="course-bottom">
         <div class="course-pricing">
-          <div class="price-option"><span class="mode">Online</span><span class="new-price">7000 <span>EGP</span></span><span class="old-price">12000 EGP</span></div>
-          <div class="price-option"><span class="mode">Offline</span><span class="new-price">3000 <span>EGP</span></span><span class="old-price">6000 EGP</span></div>
+          <div class="price-option"><span class="mode">Online</span><span class="new-price">3000 <span>EGP</span></span><span class="old-price">6000 EGP</span></div>
+          <div class="price-option"><span class="mode">Offline</span><span class="new-price">7000 <span>EGP</span></span><span class="old-price">12000 EGP</span></div>
         </div>
         <div class="course-cta">View details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
       </div>
@@ -423,8 +462,8 @@
       <p class="course-desc-short">Build real routing and switching skills on Cisco gear — the foundation certification for any networking career.</p>
       <div class="course-bottom">
         <div class="course-pricing">
-          <div class="price-option"><span class="mode">Online</span><span class="new-price">7000 <span>EGP</span></span><span class="old-price">12000 EGP</span></div>
-          <div class="price-option"><span class="mode">Offline</span><span class="new-price">3000 <span>EGP</span></span><span class="old-price">6000 EGP</span></div>
+          <div class="price-option"><span class="mode">Online</span><span class="new-price">3000 <span>EGP</span></span><span class="old-price">6000 EGP</span></div>
+          <div class="price-option"><span class="mode">Offline</span><span class="new-price">7000 <span>EGP</span></span><span class="old-price">12000 EGP</span></div>
         </div>
         <div class="course-cta">View details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
       </div>
@@ -443,8 +482,8 @@
       <p class="course-desc-short">Defend real networks — threat detection, hardening, incident response, and the mindset behind every attack.</p>
       <div class="course-bottom">
         <div class="course-pricing">
-          <div class="price-option"><span class="mode">Online</span><span class="new-price">10000 <span>EGP</span></span><span class="old-price">15000 EGP</span></div>
-          <div class="price-option"><span class="mode">Offline</span><span class="new-price">5000 <span>EGP</span></span><span class="old-price">7000 EGP</span></div>
+          <div class="price-option"><span class="mode">Online</span><span class="new-price">5000 <span>EGP</span></span><span class="old-price">7000 EGP</span></div>
+          <div class="price-option"><span class="mode">Offline</span><span class="new-price">10000 <span>EGP</span></span><span class="old-price">15000 EGP</span></div>
         </div>
         <div class="course-cta">View details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
       </div>
@@ -536,9 +575,88 @@
       </div>
     </div>
     <div class="modal-desc" id="modalDesc"></div>
+
+    <div id="itSupportDetails" style="display:none;">
+      <div class="it-highlight">
+        <div class="it-highlight-card">
+          <span class="label">Program</span>
+          <strong>IT Technical Support Career Program</strong>
+        </div>
+        <div class="it-highlight-card">
+          <span class="label">Start</span>
+          <strong>1 September</strong>
+        </div>
+        <div class="it-highlight-card">
+          <span class="label">Schedule</span>
+          <strong>Tuesday & Friday</strong>
+        </div>
+      </div>
+
+      <div class="it-section-title">البرنامج مناسب لمين؟</div>
+      <div class="it-detail-text">
+        البرنامج مصمم بشكل عملي عشان يساعدك تبني أساس قوي وتبدأ طريقك في مجال الـIT، مع تركيز على المهارات المطلوبة في بيئة العمل والتطبيق العملي.
+      </div>
+
+      <div class="it-section-title">البرنامج بيشمل</div>
+      <div class="it-outcomes">
+        <div>Networking & Infrastructure</div>
+        <div>Windows Server</div>
+        <div>Active Directory & Group Policy</div>
+        <div>Hyper-V & Virtualization</div>
+        <div>Firewall & Troubleshooting</div>
+        <div>Practical Labs</div>
+        <div>Real Projects</div>
+        <div>CV Preparation</div>
+        <div>Interview Preparation</div>
+        <div>Certificate of Completion</div>
+      </div>
+
+      <div class="it-section-title">نظام التدريب</div>
+      <div class="it-detail-text">
+        <strong>Hybrid Program</strong><br>
+        🏢 Offline في 6 أكتوبر — داخل Black Horse Courses<br>
+        💻 Online من أي مكان<br><br>
+        نفس المحتوى والتدريب في الحالتين، والمحاضرات Live ويتم تسجيلها للرجوع إليها بعد كده.
+      </div>
+
+      <div class="it-section-title">المواعيد</div>
+      <div class="it-detail-text">
+        📅 البداية: 1 سبتمبر<br>
+        📆 المحاضرات: الثلاثاء والجمعة<br>
+        ⏱️ 3 ساعات لكل محاضرة
+      </div>
+
+      <div class="it-section-title">السعر والعرض</div>
+      <div class="it-detail-text">
+        قيمة البرنامج الأساسية <strong>12,000 جنيه</strong>، وحاليًا متاح Special Offer 🔥<br>
+        السعر الحالي: <strong>7,000 جنيه فقط بدل 12,000 جنيه</strong><br>
+        يعني بتوفر <strong>5,000 جنيه كاملة</strong>.<br><br>
+        <strong>الـ7,000 جنيه للـOnline، بينما الـOffline في 6 أكتوبر متاح حاليًا بـ3,000 جنيه.</strong>
+      </div>
+
+      <div class="it-note">
+        ⚠️ الـSpecial Offer متاح لعدد محدود من المقاعد.
+      </div>
+
+      <div class="it-section-title">عنوان فرع 6 أكتوبر</div>
+      <div class="it-detail-text">
+        3 أ القطعة الأولى، الدور الأول فوق بنك القاهرة، الحصري<br>
+        مجمع ماجدة للفنون — 6 أكتوبر<br>
+        داخل <strong>Black Horse Courses</strong><br><br>
+        <a href="https://maps.app.goo.gl/FFHB8EPXuYUD7t5t5" target="_blank" rel="noopener" style="color:var(--cyan);font-weight:600;">📍 فتح اللوكيشن على Google Maps</a>
+      </div>
+
+      <div class="it-section-title">الحجز</div>
+      <div class="it-detail-text">
+        لو حابب تحجز، اضغط على <strong>احجز مكانك</strong> واملأ بياناتك. التسجيل في الفورم بيساعدنا نعرف بياناتك، هدفك، طريقة الحضور، وهل أنت جاهز للحجز أم تحتاج متابعة.
+      </div>
+    </div>
+
     <ul class="modal-list" id="modalList"></ul>
+
     <div class="modal-actions">
-      <a class="btn btn-primary" href="https://wa.me/201060941830" target="_blank" rel="noopener">Enroll via WhatsApp</a>
+      <a class="btn btn-primary" id="itBookingBtn" href="#" target="_blank" rel="noopener">احجز مكانك</a>
+      <a class="btn btn-ghost" href="https://wa.me/201060941830" target="_blank" rel="noopener">WhatsApp</a>
       <a class="btn btn-ghost" href="mailto:omni-tech13@outlook.com">Email us</a>
     </div>
   </div>
@@ -549,7 +667,7 @@
     mcsa: {
       code: "MCSA · Microsoft Certified Solutions Associate",
       title: "MCSA — Windows Server Administration",
-      "online":"7000","offline":"3000","onlineOld":"12000","offlineOld":"6000",
+      "online":"3000","offline":"7000","onlineOld":"6000","offlineOld":"12000",
       desc: [
         "This course takes you through installing, configuring, and managing Windows Server environments the way they run in real companies — not just in theory.",
         "You'll set up Active Directory, manage users and group policy, configure DNS and DHCP, and handle the storage and networking roles a server admin is expected to own."
@@ -563,25 +681,30 @@
       ]
     },
     itsupport: {
-      code: "IT Technical Support · Helpdesk & Field",
-      title: "IT Technical Support",
-      "online":"7000","offline":"3000","onlineOld":"12000","offlineOld":"6000",
+      code: "IT Technical Support · Career Program",
+      title: "IT Technical Support Career Program",
+      "online":"3000","offline":"7000","onlineOld":"6000","offlineOld":"12000",
       desc: [
-        "Built for anyone who wants to start an IT career at the first line of contact — diagnosing problems, fixing them, and explaining what happened in plain language.",
-        "You'll work through real hardware faults, OS issues, printer and peripheral setup, and the ticketing habits that make a support technician reliable."
+        "برنامج عملي مصمم لمساعدتك تبني أساس قوي وتبدأ طريقك في مجال الـIT، من خلال تدريب Live يجمع بين الفهم النظري والتطبيق العملي.",
+        "البرنامج متاح بنظام Hybrid: Online من أي مكان أو Offline في 6 أكتوبر، مع نفس المحتوى والتدريب في الحالتين. المحاضرات Live ويتم تسجيلها للرجوع إليها بعد ذلك."
       ],
       list: [
-        "Hardware assembly & diagnostics",
-        "Windows OS installation & troubleshooting",
-        "Networking basics for support technicians",
-        "Ticketing systems & documentation habits",
-        "Customer-facing communication"
+        "Networking & Infrastructure",
+        "Windows Server",
+        "Active Directory & Group Policy",
+        "Hyper-V & Virtualization",
+        "Firewall & Troubleshooting",
+        "Practical Labs",
+        "Real Projects",
+        "CV Preparation",
+        "Interview Preparation",
+        "Certificate of Completion"
       ]
     },
     ccna: {
       code: "CCNA · Cisco Certified Network Associate",
       title: "CCNA — Routing & Switching",
-      "online":"7000","offline":"3000","onlineOld":"12000","offlineOld":"6000",
+      "online":"3000","offline":"7000","onlineOld":"6000","offlineOld":"12000",
       desc: [
         "The foundation certification for a networking career, taught on real Cisco equipment and packet-tracer labs so the concepts actually stick.",
         "By the end you'll be comfortable configuring routers and switches, reading a network topology, and troubleshooting connectivity like it's your job — because soon it will be."
@@ -597,7 +720,7 @@
     cyber: {
       code: "Cyber Security · Defense & Response",
       title: "Cyber Security",
-      "online":"10000","offline":"5000","onlineOld":"15000","offlineOld":"7000",
+      "online":"5000","offline":"10000","onlineOld":"7000","offlineOld":"15000",
       desc: [
         "A practical introduction to defending networks and systems — how attacks actually happen, how to spot them, and how to respond before damage spreads.",
         "You'll get hands-on with security tools, walk through real incident scenarios, and build the analytical mindset that separates a good security analyst from a great one."
@@ -627,6 +750,15 @@
       document.getElementById('modalOfflineOld').textContent = `${data.offlineOld} EGP`;
       document.getElementById('modalDesc').innerHTML = data.desc.map(p => `<p>${p}</p>`).join('');
       document.getElementById('modalList').innerHTML = data.list.map(li => `<li>${li}</li>`).join('');
+
+      const itDetails = document.getElementById('itSupportDetails');
+      const bookingBtn = document.getElementById('itBookingBtn');
+      const isITSupport = key === 'itsupport';
+
+      itDetails.style.display = isITSupport ? 'block' : 'none';
+      bookingBtn.style.display = isITSupport ? 'inline-flex' : 'none';
+      bookingBtn.href = isITSupport ? 'https://docs.google.com/forms/d/e/1FAIpQLSd-JRS2KsuiPvX4Zm7ABFFwH8hn-6j1Ko3Ub_DcPjgU25zrEg/viewform?usp=header' : '#';
+
       overlay.classList.add('open');
     });
     card.setAttribute('tabindex','0');
