@@ -189,10 +189,6 @@
     color: var(--muted); font-size:0.94rem; line-height:1.6; margin-bottom:22px;
   }
   .course-bottom{ display:flex; align-items:center; justify-content:space-between; }
-  .course-price{
-    font-family: var(--mono); font-size:1.15rem; font-weight:500;
-  }
-  .course-price span{ color: var(--muted); font-size:0.72rem; margin-left:4px; }
   .course-cta{
     font-family: var(--body); font-size:0.85rem; font-weight:600; color: var(--text);
     display:flex; align-items:center; gap:6px;
@@ -213,7 +209,7 @@
   }
   .modal-overlay.open{ opacity:1; pointer-events:auto; }
   .modal{
-    width:100%; max-width:720px; max-height:88vh; overflow-y:auto;
+    width:100%; max-width:620px; max-height:85vh; overflow-y:auto;
     background: var(--bg-soft);
     border: 1px solid var(--line);
     border-radius: 16px;
@@ -239,11 +235,6 @@
     background: linear-gradient(100deg, var(--purple), var(--cyan));
     -webkit-background-clip:text; background-clip:text; color:transparent;
   }
-  .modal-price-row{
-    display:flex; align-items:center; gap:10px; margin-bottom:24px;
-    font-family: var(--mono); font-size:1.3rem;
-  }
-  .modal-price-row .cur{ color: var(--muted); font-size:0.8rem; }
   .modal-desc p{ color: var(--muted); line-height:1.75; margin-bottom:16px; font-size:0.98rem; }
   .modal-list{ list-style:none; margin: 18px 0; }
   .modal-list li{
@@ -256,6 +247,15 @@
     background: linear-gradient(135deg, var(--purple), var(--cyan));
   }
   .modal-actions{ margin-top:28px; display:flex; gap:14px; flex-wrap:wrap; }
+  #courses, .modal{ direction:rtl; text-align:right; }
+  .course-bottom{ justify-content:flex-start; }
+  .modal-close{ right:auto; left:20px; }
+  .modal-list{ padding:0; }
+  .modal-list li{ padding:9px 26px 9px 0; }
+  .modal-list li::before{ left:auto; right:0; }
+  .modal h4{ margin:22px 0 8px; font-size:1.05rem; }
+  .modal-benefit{ color:var(--muted); line-height:1.75; }
+  @media(max-width:600px){ .modal{ padding:30px 22px; } }
 
   /* ===== ABOUT / WHY ===== */
   .why-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:24px; }
@@ -310,57 +310,6 @@
   }
 
   :focus-visible{ outline: 2px solid var(--cyan); outline-offset:3px; }
-
-  .course-pricing{display:flex; gap:18px; flex-wrap:wrap; align-items:center;}
-  .price-option{display:flex; flex-direction:column; gap:3px;}
-  .price-option .mode{font-family:var(--mono); font-size:0.68rem; color:var(--muted); letter-spacing:1px; text-transform:uppercase;}
-  .price-option .new-price{font-family:var(--mono); font-size:1.05rem; font-weight:600;}
-  .price-option .old-price{font-family:var(--mono); font-size:0.68rem; color:var(--muted); text-decoration:line-through;}
-  .modal-pricing{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:24px;}
-  .modal-price-option{padding:14px 16px; border:1px solid var(--line); border-radius:10px; background:rgba(255,255,255,0.02);}
-  .modal-price-option .mode{font-family:var(--mono); font-size:0.68rem; color:var(--muted); letter-spacing:1px; text-transform:uppercase; display:block; margin-bottom:6px;}
-  .modal-price-option .new{font-family:var(--mono); font-size:1.25rem; font-weight:600;}
-  .modal-price-option .old{font-family:var(--mono); font-size:0.72rem; color:var(--muted); text-decoration:line-through; margin-left:6px;}
-  @media (max-width:520px){ .modal-pricing{grid-template-columns:1fr;} }
-
-  /* ===== IT SUPPORT ENHANCED MODAL ===== */
-  .it-highlight{
-    display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:0 0 22px;
-  }
-  .it-highlight-card{
-    border:1px solid var(--line); border-radius:10px; padding:13px 14px;
-    background:rgba(51,217,232,0.035);
-  }
-  .it-highlight-card .label{
-    display:block; font-family:var(--mono); font-size:.64rem; letter-spacing:1px;
-    color:var(--muted); text-transform:uppercase; margin-bottom:5px;
-  }
-  .it-highlight-card strong{font-size:.92rem;}
-  .it-section-title{
-    font-family:var(--display); font-size:1.05rem; margin:22px 0 9px;
-  }
-  .it-detail-text{
-    color:var(--muted); line-height:1.7; font-size:.94rem; margin-bottom:10px;
-  }
-  .it-outcomes{
-    display:grid; grid-template-columns:1fr 1fr; gap:8px 18px; margin:10px 0 4px;
-  }
-  .it-outcomes div{
-    color:var(--text); font-size:.9rem; padding:8px 0 8px 22px; position:relative;
-  }
-  .it-outcomes div::before{
-    content:'✓'; position:absolute; left:0; color:var(--green); font-weight:700;
-  }
-  .it-note{
-    margin-top:18px; padding:13px 15px; border:1px solid rgba(110,232,138,.2);
-    border-radius:10px; background:rgba(110,232,138,.035); color:var(--muted);
-    font-size:.86rem; line-height:1.6;
-  }
-  @media(max-width:600px){
-    .it-highlight{grid-template-columns:1fr;}
-    .it-outcomes{grid-template-columns:1fr;}
-  }
-
 </style>
 </head>
 <body>
@@ -382,8 +331,9 @@
   </div>
   <div class="nav-links">
     <a href="#courses">Courses</a>
+    <a href="assessment.html">تحديد المستوى</a>
     <a href="#why">Why Us</a>
-    <a href="contact.html">Contact</a>
+    <a href="#contact">Contact</a>
   </div>
 </nav>
 
@@ -396,6 +346,7 @@
   <p class="sub">OmniTech runs hands-on IT certification courses in system administration, technical support, networking, and cybersecurity — taught by people who actually work the ticket queue.</p>
   <div class="hero-ctas">
     <a href="#courses" class="btn btn-primary">Browse courses</a>
+    <a href="assessment.html" class="btn btn-ghost">اختبر مستواك</a>
     <a href="#contact" class="btn btn-ghost">Talk to us</a>
   </div>
   <div class="scan-line"></div>
@@ -403,8 +354,8 @@
 
 <section class="section" id="courses">
   <div class="section-head">
-    <div class="tag">// Curriculum</div>
-    <h2>Pick your path</h2>
+    <div class="tag">// COURSES</div>
+    <h2>الكورسات المتاحة</h2>
   </div>
 
   <div class="course-grid">
@@ -419,13 +370,9 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="#7c6bff" stroke-width="1.6"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/></svg>
         </div>
       </div>
-      <p class="course-desc-short">Master Microsoft server environments — install, configure, and administer Windows Server infrastructure from the ground up.</p>
+      <p class="course-desc-short">مقدمة عملية لإدارة Windows Server وActive Directory وخدمات الشبكة داخل بيئة عمل.</p>
       <div class="course-bottom">
-        <div class="course-pricing">
-          <div class="price-option"><span class="mode">Online</span><span class="new-price">3000 <span>EGP</span></span><span class="old-price">6000 EGP</span></div>
-          <div class="price-option"><span class="mode">Offline</span><span class="new-price">7000 <span>EGP</span></span><span class="old-price">12000 EGP</span></div>
-        </div>
-        <div class="course-cta">View details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        <div class="course-cta">اعرف التفاصيل <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
       </div>
     </div>
 
@@ -439,13 +386,9 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="#33d9e8" stroke-width="1.6"><path d="M12 3a5 5 0 0 0-5 5v3H5a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h1v1a6 6 0 0 0 6 6"/><path d="M12 3a5 5 0 0 1 5 5v3h2a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2h-1v1a6 6 0 0 1-6 6"/><path d="M12 9v3M9 12h6"/></svg>
         </div>
       </div>
-      <p class="course-desc-short">Learn to diagnose hardware and software issues, manage tickets, and keep end-users productive on day one of the job.</p>
+      <p class="course-desc-short">أساسيات الدعم الفني وتشخيص أعطال الأجهزة والأنظمة والشبكات بخطوات عملية.</p>
       <div class="course-bottom">
-        <div class="course-pricing">
-          <div class="price-option"><span class="mode">Online</span><span class="new-price">3000 <span>EGP</span></span><span class="old-price">6000 EGP</span></div>
-          <div class="price-option"><span class="mode">Offline</span><span class="new-price">7000 <span>EGP</span></span><span class="old-price">12000 EGP</span></div>
-        </div>
-        <div class="course-cta">View details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        <div class="course-cta">اعرف التفاصيل <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
       </div>
     </div>
 
@@ -459,13 +402,9 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="#6ee88a" stroke-width="1.6"><circle cx="6" cy="6" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="12" cy="18" r="2.4"/><path d="M8 7.3 12 16m4-8.7L12 16M8.8 11c1.3 1.5 2.7 2 3.2 2.5s1.4 1 3.2 2.5"/></svg>
         </div>
       </div>
-      <p class="course-desc-short">Build real routing and switching skills on Cisco gear — the foundation certification for any networking career.</p>
+      <p class="course-desc-short">تطبيقات في الشبكات والتوجيه والتبديل باستخدام أجهزة Cisco وتمارين شبكات.</p>
       <div class="course-bottom">
-        <div class="course-pricing">
-          <div class="price-option"><span class="mode">Online</span><span class="new-price">3000 <span>EGP</span></span><span class="old-price">6000 EGP</span></div>
-          <div class="price-option"><span class="mode">Offline</span><span class="new-price">7000 <span>EGP</span></span><span class="old-price">12000 EGP</span></div>
-        </div>
-        <div class="course-cta">View details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        <div class="course-cta">اعرف التفاصيل <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
       </div>
     </div>
 
@@ -479,13 +418,9 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="#ff5c8a" stroke-width="1.6"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9.5 12l1.8 1.8L15 10"/></svg>
         </div>
       </div>
-      <p class="course-desc-short">Defend real networks — threat detection, hardening, incident response, and the mindset behind every attack.</p>
+      <p class="course-desc-short">تعرف على أساسيات حماية الأنظمة والشبكات وتحليل التهديدات والاستجابة للحوادث.</p>
       <div class="course-bottom">
-        <div class="course-pricing">
-          <div class="price-option"><span class="mode">Online</span><span class="new-price">5000 <span>EGP</span></span><span class="old-price">7000 EGP</span></div>
-          <div class="price-option"><span class="mode">Offline</span><span class="new-price">10000 <span>EGP</span></span><span class="old-price">15000 EGP</span></div>
-        </div>
-        <div class="course-cta">View details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        <div class="course-cta">اعرف التفاصيل <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
       </div>
     </div>
 
@@ -558,106 +493,18 @@
 
 <!-- MODAL -->
 <div class="modal-overlay" id="modalOverlay">
-  <div class="modal" role="dialog" aria-modal="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" dir="rtl">
     <div class="modal-close" id="modalClose">&times;</div>
     <div class="modal-eyebrow" id="modalEyebrow">COURSE</div>
     <h3 id="modalTitle">Course Title</h3>
-    <div class="modal-pricing">
-      <div class="modal-price-option">
-        <span class="mode">Online</span>
-        <span class="new" id="modalOnlinePrice">0 EGP</span>
-        <span class="old" id="modalOnlineOld">0 EGP</span>
-      </div>
-      <div class="modal-price-option">
-        <span class="mode">Offline</span>
-        <span class="new" id="modalOfflinePrice">0 EGP</span>
-        <span class="old" id="modalOfflineOld">0 EGP</span>
-      </div>
-    </div>
     <div class="modal-desc" id="modalDesc"></div>
-
-    <div id="itSupportDetails" style="display:none;">
-      <div class="it-highlight">
-        <div class="it-highlight-card">
-          <span class="label">Program</span>
-          <strong>IT Technical Support Career Program</strong>
-        </div>
-        <div class="it-highlight-card">
-          <span class="label">Start</span>
-          <strong>1 September</strong>
-        </div>
-        <div class="it-highlight-card">
-          <span class="label">Schedule</span>
-          <strong>Tuesday & Friday</strong>
-        </div>
-      </div>
-
-      <div class="it-section-title">البرنامج مناسب لمين؟</div>
-      <div class="it-detail-text">
-        البرنامج مصمم بشكل عملي عشان يساعدك تبني أساس قوي وتبدأ طريقك في مجال الـIT، مع تركيز على المهارات المطلوبة في بيئة العمل والتطبيق العملي.
-      </div>
-
-      <div class="it-section-title">البرنامج بيشمل</div>
-      <div class="it-outcomes">
-        <div>Networking & Infrastructure</div>
-        <div>Windows Server</div>
-        <div>Active Directory & Group Policy</div>
-        <div>Hyper-V & Virtualization</div>
-        <div>Firewall & Troubleshooting</div>
-        <div>Practical Labs</div>
-        <div>Real Projects</div>
-        <div>CV Preparation</div>
-        <div>Interview Preparation</div>
-        <div>Certificate of Completion</div>
-      </div>
-
-      <div class="it-section-title">نظام التدريب</div>
-      <div class="it-detail-text">
-        <strong>Hybrid Program</strong><br>
-        🏢 Offline في 6 أكتوبر — داخل Black Horse Courses<br>
-        💻 Online من أي مكان<br><br>
-        نفس المحتوى والتدريب في الحالتين، والمحاضرات Live ويتم تسجيلها للرجوع إليها بعد كده.
-      </div>
-
-      <div class="it-section-title">المواعيد</div>
-      <div class="it-detail-text">
-        📅 البداية: 1 سبتمبر<br>
-        📆 المحاضرات: الثلاثاء والجمعة<br>
-        ⏱️ 3 ساعات لكل محاضرة
-      </div>
-
-      <div class="it-section-title">السعر والعرض</div>
-      <div class="it-detail-text">
-        قيمة البرنامج الأساسية <strong>12,000 جنيه</strong>، وحاليًا متاح Special Offer 🔥<br>
-        السعر الحالي: <strong>7,000 جنيه فقط بدل 12,000 جنيه</strong><br>
-        يعني بتوفر <strong>5,000 جنيه كاملة</strong>.<br><br>
-        <strong>الـ7,000 جنيه للـOnline، بينما الـOffline في 6 أكتوبر متاح حاليًا بـ3,000 جنيه.</strong>
-      </div>
-
-      <div class="it-note">
-        ⚠️ الـSpecial Offer متاح لعدد محدود من المقاعد.
-      </div>
-
-      <div class="it-section-title">عنوان فرع 6 أكتوبر</div>
-      <div class="it-detail-text">
-        3 أ القطعة الأولى، الدور الأول فوق بنك القاهرة، الحصري<br>
-        مجمع ماجدة للفنون — 6 أكتوبر<br>
-        داخل <strong>Black Horse Courses</strong><br><br>
-        <a href="https://maps.app.goo.gl/FFHB8EPXuYUD7t5t5" target="_blank" rel="noopener" style="color:var(--cyan);font-weight:600;">📍 فتح اللوكيشن على Google Maps</a>
-      </div>
-
-      <div class="it-section-title">الحجز</div>
-      <div class="it-detail-text">
-        لو حابب تحجز، اضغط على <strong>احجز مكانك</strong> واملأ بياناتك. التسجيل في الفورم بيساعدنا نعرف بياناتك، هدفك، طريقة الحضور، وهل أنت جاهز للحجز أم تحتاج متابعة.
-      </div>
-    </div>
-
+    <h4>هتتعلم إيه؟</h4>
     <ul class="modal-list" id="modalList"></ul>
-
+    <h4>هتستفيد إيه؟</h4>
+    <p class="modal-benefit" id="modalBenefit"></p>
     <div class="modal-actions">
-      <a class="btn btn-primary" id="itBookingBtn" href="#" target="_blank" rel="noopener">احجز مكانك</a>
-      <a class="btn btn-ghost" href="https://wa.me/201060941830" target="_blank" rel="noopener">WhatsApp</a>
-      <a class="btn btn-ghost" href="mailto:omni-tech13@outlook.com">Email us</a>
+      <a class="btn btn-primary" href="https://wa.me/201060941830" target="_blank" rel="noopener">اسأل عن الدورة على واتساب</a>
+      <a class="btn btn-ghost" href="mailto:omni-tech13@outlook.com">راسلنا بالإيميل</a>
     </div>
   </div>
 </div>
@@ -665,73 +512,32 @@
 <script>
   const courseData = {
     mcsa: {
-      code: "MCSA · Microsoft Certified Solutions Associate",
+      code: "إدارة الأنظمة",
       title: "MCSA — Windows Server Administration",
-      "online":"3000","offline":"7000","onlineOld":"6000","offlineOld":"12000",
-      desc: [
-        "This course takes you through installing, configuring, and managing Windows Server environments the way they run in real companies — not just in theory.",
-        "You'll set up Active Directory, manage users and group policy, configure DNS and DHCP, and handle the storage and networking roles a server admin is expected to own."
-      ],
-      list: [
-        "Windows Server installation & roles",
-        "Active Directory Domain Services",
-        "Group Policy & user management",
-        "DNS, DHCP & file services",
-        "Backup, monitoring & troubleshooting"
-      ]
+      desc: "دورة في إدارة بيئات Windows Server، من تثبيت الخادم إلى إعداد المستخدمين والخدمات الأساسية للشبكة.",
+      list: ["تثبيت Windows Server وأدواره", "Active Directory وإدارة المستخدمين", "Group Policy", "DNS وDHCP ومشاركة الملفات", "النسخ الاحتياطي واستكشاف الأعطال"],
+      benefit: "هتقدر تنشئ بيئة خوادم تدريبية وتنفذ مهام الإدارة اليومية وتتعامل مع مشكلات شائعة بخطوات واضحة."
     },
     itsupport: {
-      code: "IT Technical Support · Career Program",
-      title: "IT Technical Support Career Program",
-      "online":"3000","offline":"7000","onlineOld":"6000","offlineOld":"12000",
-      desc: [
-        "برنامج عملي مصمم لمساعدتك تبني أساس قوي وتبدأ طريقك في مجال الـIT، من خلال تدريب Live يجمع بين الفهم النظري والتطبيق العملي.",
-        "البرنامج متاح بنظام Hybrid: Online من أي مكان أو Offline في 6 أكتوبر، مع نفس المحتوى والتدريب في الحالتين. المحاضرات Live ويتم تسجيلها للرجوع إليها بعد ذلك."
-      ],
-      list: [
-        "Networking & Infrastructure",
-        "Windows Server",
-        "Active Directory & Group Policy",
-        "Hyper-V & Virtualization",
-        "Firewall & Troubleshooting",
-        "Practical Labs",
-        "Real Projects",
-        "CV Preparation",
-        "Interview Preparation",
-        "Certificate of Completion"
-      ]
+      code: "الدعم الفني",
+      title: "IT Technical Support",
+      desc: "دورة مناسبة للبداية في الدعم الفني، تركز على فحص المشكلات وتوثيقها وحلها عمليًا.",
+      list: ["مكونات الكمبيوتر وتشخيص الأعطال", "تثبيت Windows وحل مشكلاته", "أساسيات الشبكات للدعم الفني", "إعداد الطابعات والأجهزة الطرفية", "توثيق البلاغات والتعامل مع المستخدمين"],
+      benefit: "هتتعلم تتبع سبب العطل بدل التخمين، وتطبق خطوات الدعم الفني على أجهزة وسيناريوهات قريبة من بيئة العمل."
     },
     ccna: {
-      code: "CCNA · Cisco Certified Network Associate",
+      code: "الشبكات",
       title: "CCNA — Routing & Switching",
-      "online":"3000","offline":"7000","onlineOld":"6000","offlineOld":"12000",
-      desc: [
-        "The foundation certification for a networking career, taught on real Cisco equipment and packet-tracer labs so the concepts actually stick.",
-        "By the end you'll be comfortable configuring routers and switches, reading a network topology, and troubleshooting connectivity like it's your job — because soon it will be."
-      ],
-      list: [
-        "IP addressing & subnetting",
-        "Router & switch configuration",
-        "VLANs, trunking & inter-VLAN routing",
-        "Routing protocols (static, OSPF)",
-        "Network troubleshooting methodology"
-      ]
+      desc: "دورة تأسيسية في شبكات Cisco مع تطبيقات على التوجيه والتبديل وإعداد الأجهزة.",
+      list: ["عناوين IP وتقسيم الشبكات", "إعداد الراوترات والسويتشات", "VLAN وTrunk وInter-VLAN Routing", "التوجيه الثابت وOSPF", "اختبار الاتصال واستكشاف الأعطال"],
+      benefit: "هتقدر تقرأ مخطط شبكة بسيط، وتجهز أجهزة الشبكة وتختبر الاتصال وتحدد مكان المشكلة عند تعطل المسار."
     },
     cyber: {
-      code: "Cyber Security · Defense & Response",
+      code: "الأمن السيبراني",
       title: "Cyber Security",
-      "online":"5000","offline":"10000","onlineOld":"7000","offlineOld":"15000",
-      desc: [
-        "A practical introduction to defending networks and systems — how attacks actually happen, how to spot them, and how to respond before damage spreads.",
-        "You'll get hands-on with security tools, walk through real incident scenarios, and build the analytical mindset that separates a good security analyst from a great one."
-      ],
-      list: [
-        "Threats, vulnerabilities & attack vectors",
-        "Network & endpoint hardening",
-        "Security monitoring & log analysis",
-        "Incident response fundamentals",
-        "Ethical hacking basics & tools"
-      ]
+      desc: "مقدمة في أمن الشبكات والأنظمة، تشمل فهم التهديدات وطرق الحماية والمتابعة.",
+      list: ["التهديدات والثغرات الشائعة", "تقوية إعدادات الشبكات والأنظمة", "مراجعة السجلات والتنبيهات", "أساسيات الاستجابة للحوادث", "مبادئ الاختبار الأمني المصرح به"],
+      benefit: "هتتعلم تلاحظ مؤشرات الخطر وتراجع إعدادات الحماية وتتعامل مع سيناريوهات أمنية تدريبية بصورة منظمة."
     }
   };
 
@@ -744,21 +550,9 @@
       const data = courseData[key];
       document.getElementById('modalEyebrow').textContent = data.code;
       document.getElementById('modalTitle').textContent = data.title;
-      document.getElementById('modalOnlinePrice').textContent = `${data.online} EGP`;
-      document.getElementById('modalOnlineOld').textContent = `${data.onlineOld} EGP`;
-      document.getElementById('modalOfflinePrice').textContent = `${data.offline} EGP`;
-      document.getElementById('modalOfflineOld').textContent = `${data.offlineOld} EGP`;
-      document.getElementById('modalDesc').innerHTML = data.desc.map(p => `<p>${p}</p>`).join('');
-      document.getElementById('modalList').innerHTML = data.list.map(li => `<li>${li}</li>`).join('');
-
-      const itDetails = document.getElementById('itSupportDetails');
-      const bookingBtn = document.getElementById('itBookingBtn');
-      const isITSupport = key === 'itsupport';
-
-      itDetails.style.display = isITSupport ? 'block' : 'none';
-      bookingBtn.style.display = isITSupport ? 'inline-flex' : 'none';
-      bookingBtn.href = isITSupport ? 'https://docs.google.com/forms/d/e/1FAIpQLSd-JRS2KsuiPvX4Zm7ABFFwH8hn-6j1Ko3Ub_DcPjgU25zrEg/viewform?usp=header' : '#';
-
+      document.getElementById('modalDesc').textContent = data.desc;
+      document.getElementById('modalList').replaceChildren(...data.list.map(item => { const li = document.createElement('li'); li.textContent = item; return li; }));
+      document.getElementById('modalBenefit').textContent = data.benefit;
       overlay.classList.add('open');
     });
     card.setAttribute('tabindex','0');
