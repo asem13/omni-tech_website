@@ -1,0 +1,3 @@
+# Private local tools and previous export bundles must never be published.
+/local-admin/
+/outputs/
